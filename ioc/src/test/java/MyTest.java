@@ -1,15 +1,33 @@
-import com.springdemo.dao.UserDaoImpl;
+import com.springdemo.dao.UserDao;
 import com.springdemo.dao.UserDaoMySQLImpl;
 import com.springdemo.dao.UserDaoOracleImpl;
 import com.springdemo.service.UserServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyTest {
     public static void main(String[] args) {
-        UserServiceImpl userService = new UserServiceImpl();
-
-        userService.setUser(new UserDaoMySQLImpl());
-
+        // 注册spring容器
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        // 获取userServiceImpl实例
+        UserServiceImpl userService = (UserServiceImpl) context.getBean("userServiceImpl");
+        // 获取userDao实例
+        UserDao userDao = (UserDao) context.getBean("userDaoImpl");
+        // 依赖注入userDao实例
+        userService.setUser(userDao);
+        // 执行方法
         userService.getUserInfo();
-
+        // 获取userDaoMySQLImpl实例
+        UserDaoMySQLImpl userDaoMySQLImpl = (UserDaoMySQLImpl) context.getBean("userDaoMySQLImpl");
+        // 依赖注入userDaoMySQLImpl实例
+        userService.setUser(userDaoMySQLImpl);
+        // 执行方法
+        userService.getUserInfo();
+        // 获取userDaoOracleImpl实例
+        UserDaoOracleImpl userDaoOracleImpl = (UserDaoOracleImpl) context.getBean("userDaoOracleImpl");
+        // 依赖注入userDaoOracleImpl实例
+        userService.setUser(userDaoOracleImpl);
+        // 执行方法
+        userService.getUserInfo();
     }
 }
