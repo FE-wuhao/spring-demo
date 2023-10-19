@@ -1,4 +1,4 @@
-package com.springdemo.dao;
+package com.springDemo.dao;
 
 public class UserDaoImpl implements UserDao {
     @Override
