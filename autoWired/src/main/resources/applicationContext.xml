@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dog" class="com.hax.pojo.Dog">
+        <property name="name" value="小狗："/>
+    </bean>
+    <bean id="cat" class="com.hax.pojo.Cat">
+        <property name="name" value="小猫："/>
+    </bean>
+    <bean id="people" class="com.hax.pojo.People" autowire="byName"/>
+</beans>

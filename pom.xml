@@ -11,6 +11,7 @@
         <module>ioc</module>
         <module>HelloSpring</module>
         <module>di</module>
+        <module>autoWired</module>
     </modules>
 
     <properties>
