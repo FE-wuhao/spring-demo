@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--第一版：手动实现bean的自动装配-->
+    <!--    <bean id="dog" class="com.hax.pojo.Dog">-->
+    <!--        <property name="name" value="小狗："/>-->
+    <!--    </bean>-->
+    <!--    <bean id="cat" class="com.hax.pojo.Cat">-->
+    <!--        <property name="name" value="小猫："/>-->
+    <!--    </bean>-->
+    <!--    <bean id="people" class="com.hax.pojo.People" autowire="byName"/>-->
+    <!--第二版：通过注解实现bean的自动装配-->
+    <context:annotation-config/>
     <bean id="dog" class="com.hax.pojo.Dog">
         <property name="name" value="小狗："/>
     </bean>
-    <bean id="cat" class="com.hax.pojo.Cat">
+    <bean id="cat1" class="com.hax.pojo.Cat">
         <property name="name" value="小猫："/>
     </bean>
-    <bean id="people" class="com.hax.pojo.People" autowire="byName"/>
+    <bean id="cat111" class="com.hax.pojo.Cat">
+        <property name="name" value="小猫1："/>
+    </bean>
+    <bean id="people" class="com.hax.pojo.People"/>
 </beans>
