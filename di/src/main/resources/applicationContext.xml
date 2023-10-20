@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.hax.pojo.Address">
+        <property name="province" value="江苏省"/>
+        <property name="city" value="南京市"/>
+        <property name="region" value="雨花台区"/>
+    </bean>
+    <bean id="student" class="com.hax.pojo.Student">
+        <property name="name" value="吴灏"/>
+        <property name="address" ref="address"/>
+        <property name="map">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2" value="2"/>
+                <entry key="3" value="3"/>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </set>
+        </property>
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </list>
+        </property>
+        <property name="stringList">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </array>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="className">container</prop>
+                <prop key="style">width=1px</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
