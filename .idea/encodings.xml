@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/HelloSpring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/annotation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/annotation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/appConfig/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/appConfig/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/autoWired/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/autoWired/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/di/src/main/java" charset="UTF-8" />

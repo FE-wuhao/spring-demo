@@ -13,6 +13,7 @@
         <module>di</module>
         <module>autoWired</module>
         <module>annotation</module>
+        <module>appConfig</module>
     </modules>
 
     <properties>
