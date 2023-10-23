@@ -12,6 +12,7 @@
         <module>HelloSpring</module>
         <module>di</module>
         <module>autoWired</module>
+        <module>annotation</module>
     </modules>
 
     <properties>
