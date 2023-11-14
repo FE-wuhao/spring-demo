@@ -7,9 +7,20 @@
     <bean id="userService" class="com.hax.service.UserServiceImpl"/>
     <bean id="log" class="com.hax.log.Log"/>
     <bean id="afterLog" class="com.hax.log.AfterLog"/>
+    <!--  aop的使用方式1：  -->
+    <!--    <aop:config>-->
+    <!--        &lt;!&ndash;    切入点    &ndash;&gt;-->
+    <!--        <aop:pointcut id="pointcut" expression="execution(* com.hax.service.UserServiceImpl.*(..))"/>-->
+    <!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+    <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+    <!--    </aop:config>-->
+    <!--  aop的使用方式2：  -->
+    <bean id="customClass" class="com.hax.custom.CustomClass"/>
     <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.hax.service.UserServiceImpl.*(..))"/>
-        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
-        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+        <aop:aspect ref="customClass">
+            <aop:pointcut id="customClassPointcut" expression="execution(* com.hax.service.UserServiceImpl.*(..))"/>
+            <aop:before method="before" pointcut-ref="customClassPointcut"/>
+            <aop:after method="after" pointcut-ref="customClassPointcut"/>
+        </aop:aspect>
     </aop:config>
 </beans>
