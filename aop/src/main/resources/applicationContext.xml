@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/aop
-        https://www.springframework.org/schema/aop/spring-aop.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
     <bean id="userService" class="com.hax.service.UserServiceImpl"/>
     <bean id="log" class="com.hax.log.Log"/>
     <bean id="afterLog" class="com.hax.log.AfterLog"/>
@@ -15,12 +13,16 @@
     <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
     <!--    </aop:config>-->
     <!--  aop的使用方式2：  -->
-    <bean id="customClass" class="com.hax.custom.CustomClass"/>
-    <aop:config>
-        <aop:aspect ref="customClass">
-            <aop:pointcut id="customClassPointcut" expression="execution(* com.hax.service.UserServiceImpl.*(..))"/>
-            <aop:before method="before" pointcut-ref="customClassPointcut"/>
-            <aop:after method="after" pointcut-ref="customClassPointcut"/>
-        </aop:aspect>
-    </aop:config>
+    <!--    <bean id="customClass" class="com.hax.custom.CustomClass"/>-->
+    <!--    <aop:config>-->
+    <!--        <aop:aspect ref="customClass">-->
+    <!--            <aop:pointcut id="customClassPointcut" expression="execution(* com.hax.service.UserServiceImpl.*(..))"/>-->
+    <!--            <aop:before method="before" pointcut-ref="customClassPointcut"/>-->
+    <!--            <aop:after method="after" pointcut-ref="customClassPointcut"/>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
+    <!--  aop的使用方式3：  -->
+    <bean id="annotationPointCut" class="com.hax.custom.AnnotationPointCut"/>
+    <!--  开启注解支持  -->
+    <aop:aspectj-autoproxy/>
 </beans>
